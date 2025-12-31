@@ -205,5 +205,5 @@ class DatasetFingerprintExtractor(object):
 
 
 if __name__ == '__main__':
-    dfe = DatasetFingerprintExtractor(2, 8)
+    dfe = DatasetFingerprintExtractor(1, 2)
     dfe.run(overwrite_existing=False)
