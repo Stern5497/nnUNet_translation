@@ -88,6 +88,13 @@ class AFP(nn.Module):
                 "num_classes": 7,
                 "model_type": "PlainConvUNet"
             },
+            "TS_Compact7_3x1x1": { #3*1*1mm, TotalSegmentator compact 7-class mapping
+                "weights_path": "/export/work/users/arthur/nnUNet/results/TS_Compact7_3x1x1/nnUNetTrainer__nnUNetPlans__3d_fullres/fold_0/checkpoint_final.pth",
+                "strides": [[1, 1, 1], [1, 2, 2], [2, 2, 2], [2, 2, 2], [2, 2, 2], [1, 2, 2]],
+                "kernels" : [[1, 3, 3], [3, 3, 3], [3, 3, 3], [3, 3, 3], [3, 3, 3], [3, 3, 3]],
+                "num_classes": 7,
+                "model_type": "PlainConvUNet"
+            },
         }
         params = model_params[net]
         kernel = params.get("kernels", [[3, 3, 3]] * 6)

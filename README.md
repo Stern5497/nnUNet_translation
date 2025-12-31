@@ -44,7 +44,16 @@ Several trainers are available :
 - L1 loss ([MRCT_mae](https://github.com/Phyrise/nnUNet_translation/blob/master/nnunetv2/training/nnUNetTrainer/variants/network_architecture/nnUNetTrainerMRCT_mae.py))
 - Anatomical Feature-Prioritized loss ([MRCT_AFP](https://github.com/Phyrise/nnUNet_translation/blob/master/nnunetv2/training/nnUNetTrainer/variants/network_architecture/nnUNetTrainerMRCT_AFP.py)). Useful to compare features from a pre-trained segmentation network.
 - Fine-tuned AFP loss ([MRCT_AFP_ft](https://github.com/Phyrise/nnUNet_translation/blob/master/nnunetv2/training/nnUNetTrainer/variants/network_architecture/nnUNetTrainerMRCT_AFP_ft.py)), with reduced number of epochs and learning rate when using ```pretrained_weights```.
-Have a look at the [AFP implementation](https://github.com/Phyrise/nnUNet_translation/blob/master/nnunetv2/training/loss/AFP.py) and our [accepted paper in Physics in Medicine & Biology](https://iopscience.iop.org/article/10.1088/1361-6560/adea07) 
+
+Have a look at the [AFP implementation](https://github.com/Phyrise/nnUNet_translation/blob/master/nnunetv2/training/loss/AFP.py) and our [accepted paper in Physics in Medicine & Biology](https://iopscience.iop.org/article/10.1088/1361-6560/adea07)
+
+### AFP Loss - TotalSegmentator Models
+The AFP loss supports multiple feature extractors. A new TotalSegmentator-based model is now available:
+- **TS_Compact7_3x1x1**: Compact 7-class TotalSegmentator model (3×1×1 mm resolution) with anatomical grouping:
+  - Class mapping: organs, cardiac, muscles, bones, ribs, vertebrae
+  - Adapted for HN, AB, and TH datasets
+  - Compatible with anisotropic data (3×1×1 mm spacing)
+  - See [arXiv:2509.22394](https://arxiv.org/html/2509.22394) for implementation details 
 
 inference :
 ```bash
