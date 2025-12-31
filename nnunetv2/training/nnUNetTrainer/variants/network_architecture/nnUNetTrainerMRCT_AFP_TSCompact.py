@@ -69,7 +69,7 @@ class nnUNetTrainerMRCT_AFP_TSCompact(nnUNetTrainer):
                                                        regions, ignore_label)
 
     def configure_rotation_dummyDA_mirroring_and_inital_patch_size(self):
-        # we need to disable mirroring here so that no mirroring will be applied in inferene!
+        # we need to disable mirroring here so that no mirroring will be applied in inference!
         rotation_for_DA, do_dummy_2d_data_aug, initial_patch_size, mirror_axes = \
             super().configure_rotation_dummyDA_mirroring_and_inital_patch_size()
         mirror_axes = None
